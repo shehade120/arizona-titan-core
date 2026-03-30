@@ -4,8 +4,8 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 
 # --- PHOENIX JACKSON STRATEGIC CONFIG ---
 # Remember to replace 'YOUR_TOKEN' with the one from BotFather
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
-AMAZON_TAG = 'arizonatitan-20'
+TOKEN = '8648204017:AAGreYejXDSOvGuTkphE-20ey0lWeZCd0ZU'
+AMAZON_TAG = 'licencia006-20'
 
 # Excellence Protocol: Logging
 logging.basicConfig(
