@@ -1,0 +1,8 @@
+arizonatitan.com
+​## 2. Ubicación Estratégica
+​El archivo debe residir en la raíz (root) de tu repositorio principal (donde está tu index.html).
+​Entra a tu repositorio en GitHub.
+​Haz clic en "Add file" > "Create new file".
+​En el nombre del archivo escribe: CNAME
+​En el cuerpo del archivo escribe tu dominio: arizonatitan.com
+​Haz clic en "Commit changes".
