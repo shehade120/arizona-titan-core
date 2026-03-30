@@ -4,7 +4,11 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 
 # --- PHOENIX JACKSON STRATEGIC CONFIG ---
 # Remember to replace 'YOUR_TOKEN' with the one from BotFather
-TOKEN = '8648204017:AAGreYejXDSOvGuTkphE-20ey0lWeZCd0ZU'
+TOKEN = 'import os
+
+# Esta es la forma profesional y segura para el Proyecto Arizona Titan
+TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+
 AMAZON_TAG = 'licencia006-20'
 
 # Excellence Protocol: Logging
