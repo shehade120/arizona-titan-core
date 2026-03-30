@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arizona Titan | Global Node</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ARIZONA TITAN</div>
+        <nav>
+            <ul>
+                <li><a href="#wear">Titan Wear</a></li>
+                <li><a href="#graviton">Gravitón</a></li>
+                <li><a href="#nexus">Titan Nexus</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Tuning the Future in Bullhead City</h1>
+        <p>Radical Honesty | Sacred Geometry | Technical Excellence</p>
+        <p><small>(Honestidad Radical | Geometría Sagrada | Excelencia Técnica)</small></p>
+    </section>
+
+    <section class="grid-container">
+        <div class="card" id="wear">
+            <h2>Titan Wear</h2>
+            <p>Apparel designed under the Golden Ratio.</p>
+            <p><small>Indumentaria diseñada bajo proporción áurea.</small></p>
+            <button class="btn">Explore Catalog / Explorar</button>
+        </div>
+
+        <div class="card" id="graviton">
+            <h2>Gravitón</h2>
+            <p>Space exploration and quantum physics.</p>
+            <p><small>Exploración espacial y física cuántica.</small></p>
+            <button class="btn secondary">Alpha Access</button>
+        </div>
+
+        <div class="card" id="nexus">
+            <h2>Titan Nexus</h2>
+            <p>Market Intelligence & Affiliate Bot.</p>
+            <p><small>Inteligencia de Mercado y Bot de Afiliados.</small></p>
+            <button class="btn tech">Activate Bot / Activar</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Arizona Titan Project - Phoenix Jackson & Shehade</p>
+    </footer>
+</body>
+</html>
