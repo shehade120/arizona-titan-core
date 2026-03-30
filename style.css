@@ -1,0 +1,52 @@
+/* ARIZONA TITAN - STRATEGIC DESIGN SYSTEM */
+:root {
+    --titan-blue: #0A192F; /* Deep Professional Blue */
+    --titan-orange: #F97316; /* Energy and Action */
+    --titan-white: #E2E8F0;
+    --phi: 1.618rem; /* Golden Ratio Spacing */
+}
+
+body {
+    background-color: var(--titan-blue);
+    color: var(--titan-white);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    line-height: var(--phi);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--phi);
+    border-bottom: 1px solid var(--titan-orange);
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #0A192F 0%, #112240 100%);
+}
+
+.btn {
+    background-color: var(--titan-orange);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--titan-orange);
+}
+
+/* Sacred Geometry Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: var(--phi);
+}
