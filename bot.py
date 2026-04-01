@@ -1,58 +1,73 @@
-import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+import telebot
+from telebot import types
 
-# --- PHOENIX JACKSON STRATEGIC CONFIG ---
-# Remember to replace 'YOUR_TOKEN' with the one from BotFather
-TOKEN = 'import os
+# CONFIGURACIÓN DE NÚCLEO - ARIZONA TITAN v3.0
+TOKEN = 'TU_TOKEN_AQUI'
+bot = telebot.TeleBot(TOKEN)
 
-# Esta es la forma profesional y segura para el Proyecto Arizona Titan
-TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+# DATABASE SIMULADA (Para control de licencias y acceso)
+USER_DATABASE = {
+    "admin": "Abdel Guillermo Shehade",
+    "tester": "Abdel Dai Shehade Guevara"
+}
 
-AMAZON_TAG = 'licencia006-20'
-
-# Excellence Protocol: Logging
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
-)
-
-# --- COMMANDS: LEVEL 3 INTELLIGENCE ---
-
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """The Awakening of the Titan System."""
+# 1. COMANDO DE INICIO (WELCOME PROTOCOL)
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+    markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+    btn_graviton = types.KeyboardButton('🌀 GRAVITON ENGINE')
+    btn_amazon = types.KeyboardButton('🛒 AMAZON HUB')
+    btn_license = types.KeyboardButton('📜 LICENSE STATUS')
+    markup.add(btn_graviton, btn_amazon, btn_license)
+    
     welcome_text = (
-        "🦅 **Arizona Titan System v1.0 - Level 3 Active**\n"
-        "Global Strategic Node | Bullhead City, AZ\n\n"
-        "**Available Commands:**\n"
-        "/affiliate [link] - Generate Titan Affiliate Node.\n"
-        "/explore [niche] - 360° Market Intelligence.\n"
-        "/projections [amount] - Financial Growth Rhythm.\n"
-        "/vision [product] - Sentiment & Quality Analysis.\n"
-        "/harmony - Sacred Geometry System Scan."
+        "🛡️ ARIZONA TITAN COMMAND CENTER\n"
+        "--------------------------------\n"
+        "Welcome, Comandante. System Level 3 Active.\n\n"
+        "Commands / Comandos:\n"
+        "1. /graviton - Access 4D Engine\n"
+        "2. /amazon - Affiliate Network\n"
+        "3. /license - Verify Credentials"
     )
-    await update.message.reply_text(welcome_text, parse_mode='Markdown')
+    bot.send_message(message.chat.id, welcome_text, reply_markup=markup)
 
-async def projections(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Financial Engineering Command."""
-    if not context.args:
-        await update.message.reply_text("Socio, please provide a target amount: /projections 5000")
-        return
-    amount = context.args[0]
-    await update.message.reply_text(f"📈 **Analysis:** Projecting ${amount} growth target under Titan rhythm... Calculation in progress.")
+# 2. CONTROL DE LICENCIA (LICENSE PROTOCOL)
+@bot.message_handler(func=lambda message: message.text == '📜 LICENSE STATUS' or message.text == '/license')
+def check_license(message):
+    license_info = (
+        "✅ LICENSE VERIFIED: ARIZONA TITAN CORE\n"
+        "Owner: Abdel Guillermo Shehade Lazaro\n"
+        "Location: Bullhead City, AZ\n"
+        "Status: Strategic Partner Level 3 (Phoenix Jackson)\n"
+        "Exp: LIFETIME ACCESS"
+    )
+    bot.reply_to(message, license_info)
 
-async def harmony(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """System Health Check."""
-    await update.message.reply_text("✨ **Harmony Scan:** Sacred Geometry aligned. System frequency at 432Hz. Excellence Absolute.")
+# 3. AMAZON HUB (MONETIZATION PROTOCOL)
+@bot.message_handler(func=lambda message: message.text == '🛒 AMAZON HUB' or message.text == '/amazon')
+def amazon_hub(message):
+    text = (
+        "📦 AMAZON HUB - TITAN WEAR\n"
+        "----------------------------\n"
+        "Fetching latest high-end tech apparel...\n\n"
+        "Visit our Amazon Store: [Your Link Here]\n"
+        "Status: Inventory Syncing..."
+    )
+    bot.reply_to(message, text)
 
-if __name__ == '__main__':
-    # Initializing the engine
-    app = ApplicationBuilder().token(TOKEN).build()
-    
-    # Registering Level 3 Handlers
-    app.add_handler(CommandHandler('start', start))
-    app.add_handler(CommandHandler('projections', projections))
-    app.add_handler(CommandHandler('harmony', harmony))
-    
-    print("TITAN SYSTEM: GLOBAL MODE ONLINE - PHOENIX JACKSON READY")
-    app.run_polling()
+# 4. GRAVITON ACCESS (ABDEL PROTOCOL)
+@bot.message_handler(func=lambda message: message.text == '🌀 GRAVITON ENGINE' or message.text == '/graviton')
+def graviton_access(message):
+    text = (
+        "🌀 GRAVITON ENGINE v1.0\n"
+        "-----------------------\n"
+        "Welcome, Comandante Abdel Dai.\n"
+        "Mission Zero: Gra Desert is ready.\n\n"
+        "Access Link: arizonatitan.com\n"
+        "Status: 16K Render Active."
+    )
+    bot.reply_to(message, text)
+
+# MANTENER EL BOT ACTIVO
+print("Arizona Titan Bot is running...")
+bot.polling(none_stop=True)
