@@ -1,0 +1,5 @@
+# Redirigir errores 404 a tu página de error o al index
+ErrorDocument 404 /error404.html
+
+# Opcional: Evitar que se listen las carpetas por seguridad
+Options -Indexes
