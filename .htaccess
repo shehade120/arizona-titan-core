@@ -14,3 +14,6 @@ AddDefaultCharset UTF-8
 # Activa el motor de reescritura para futuras reglas de Arizona Titan
 RewriteEngine On
 hereq
+# CONFIGURACION NUCLEO ARIZONA TITAN
+# Esta linea busca el archivo que crearemos a continuacion
+ErrorDocument 404 /error404.html
