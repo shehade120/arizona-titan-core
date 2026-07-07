@@ -1,28 +1,40 @@
-// scripts/indexer.js
-import { ChromaClient } from 'chromadb'; // Base vectorial
-import { OpenAIEmbeddings } from '@langchain/openai'; // O tu modelo preferido
+/**
+ * @file indexer.js
+ * @description Inyector de conocimiento para el Proyecto Arizona Titan.
+ * Lee archivos de la carpeta 'knowledge-base' y los registra en la base vectorial.
+ */
+
+import { ChromaClient } from 'chromadb';
 import fs from 'fs';
 import path from 'path';
 
-const client = new ChromaClient();
+async function runIndexer() {
+    const client = new ChromaClient();
+    const collection = await client.getOrCreateCollection({
+        name: "titan-knowledge"
+    });
 
-async function indexFiles() {
-    const filesDir = './knowledge-base'; // Aquí pondremos tus PDFs, TXTs, etc.
-    const files = fs.readdirSync(filesDir);
+    const dirPath = './knowledge-base';
+    const files = fs.readdirSync(dirPath);
+
+    console.log("--- Iniciando Ingesta de Datos al Búnker ---");
 
     for (const file of files) {
-        const content = fs.readFileSync(path.join(filesDir, file), 'utf-8');
-        
-        // Convertimos el contenido en vectores
-        const vector = await generateEmbedding(content);
-        
-        // Guardamos en la base de datos de Titan
-        await collection.add({
-            ids: [file],
-            embeddings: [vector],
-            metadatas: [{ source: file }],
-            documents: [content]
-        });
-        console.log(`Knowledge Base actualizada: ${file}`);
+        if (file.endsWith('.md')) { // Solo procesamos archivos Markdown
+            const filePath = path.join(dirPath, file);
+            const content = fs.readFileSync(filePath, 'utf-8');
+
+            // Agregamos el contenido a la memoria vectorial
+            await collection.add({
+                ids: [file],
+                documents: [content],
+                metadatas: [{ source: file, timestamp: new Date().toISOString() }]
+            });
+
+            console.log(`[ÉXITO] ${file} integrado al motor de agentes.`);
+        }
     }
+    console.log("--- Proceso completado: Búnker Digital actualizado ---");
 }
+
+runIndexer().catch(console.error);
