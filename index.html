@@ -3,68 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARIZONA TITAN | Centro de Comando</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --oro-titan: #D4AF37;
-            --negro-profundo: #050505;
-            --cian-bunker: #00ffe7;
-            --blanco-suave: #e0e0e0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--negro-profundo); color: var(--blanco-suave); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        
-        /* Efecto fondo */
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%); z-index: -1; }
-
-        header { height: 20vh; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid var(--oro-titan); }
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--oro-titan); letter-spacing: 5px; }
-
-        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; max-width: 1200px; margin: 0 auto; }
-        
-        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 255, 231, 0.2); padding: 30px; border-radius: 10px; transition: 0.4s; }
-        .card:hover { border-color: var(--oro-titan); box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-        
-        .card h2 { font-family: 'Orbitron', sans-serif; color: var(--cian-bunker); margin-bottom: 15px; font-size: 1.2rem; }
-        
-        .btn-terminal { display: inline-block; margin-top: 20px; padding: 10px 20px; border: 1px solid var(--oro-titan); color: var(--oro-titan); text-decoration: none; font-family: 'Orbitron', sans-serif; transition: 0.3s; }
-        .btn-terminal:hover { background: var(--oro-titan); color: var(--negro-profundo); }
-
-        footer { text-align: center; padding: 40px; font-size: 0.7rem; color: #666; letter-spacing: 2px; }
-    </style>
+    <title>Arizona Titan | Core Engine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ARIZONA TITAN</h1>
-        <p>OPERADOR DE BÚNKER | L3 STRATEGIC PARTNER</p>
-    </header>
+    <div id="app">
+        <header>
+            <h1>Arizona Titan Core</h1>
+            <p>Sistema de Orquestación de Agentes</p>
+        </header>
 
-    <main class="dashboard">
-        <!-- Módulo 1: Gravitón -->
-        <div class="card">
-            <h2>MISSION ZERO: GRA-DESERT</h2>
-            <p>Acceso al motor de física cuántica y entorno de simulación vórtex.</p>
-            <a href="#" class="btn-terminal">INICIAR SIMULACIÓN</a>
-        </div>
+        <main>
+            <div id="status-panel">
+                <button id="start-engine">Inicializar Motor</button>
+            </div>
+            <div id="console-output"></div>
+        </main>
+    </div>
 
-        <!-- Módulo 2: Bot -->
-        <div class="card">
-            <h2>@TITANNEXUS_BOT</h2>
-            <p>Canal de comunicación cifrada y automatización de procesos.</p>
-            <a href="#" class="btn-terminal">ABRIR TERMINAL</a>
-        </div>
+    <script type="module">
+        import { Orchestrator } from './agent/orchestrator.js';
 
-        <!-- Módulo 3: Amazon -->
-        <div class="card">
-            <h2>AMAZON HUB INTEGRATION</h2>
-            <p>Sincronización de inventario, logística y despliegue de activos.</p>
-            <a href="#" class="btn-terminal">ACCEDER A HUB</a>
-        </div>
-    </main>
+        const btn = document.getElementById('start-engine');
+        const output = document.getElementById('console-output');
 
-    <footer>
-        <p>LEGACY PROJECT | BULLHEAD CITY • LOS ANGELES • NEWPORT</p>
-    </footer>
+        btn.addEventListener('click', async () => {
+            output.innerHTML = "Iniciando secuencia de activación...";
+            const titan = new Orchestrator();
+            await titan.boot();
+            output.innerHTML = "Sistema Arizona Titan en línea.";
+        });
+    </script>
 </body>
 </html>
