@@ -1,43 +1,67 @@
-// agent/orchestrator.js
-import { FinanceAgent } from './financeAgent.js';
-import { GravitonAgent } from './gravitonAgent.js';
-import { HandymanAgent } from './handymanAgent.js';
-// ... importar los demás
+/**
+ * @file orchestrator.js
+ * @description Motor central del Proyecto Arizona Titan. 
+ * Implementa recuperación semántica (RAG) para consulta de conocimiento histórico.
+ */
+
+import { ChromaClient } from 'chromadb';
 
 export class Orchestrator {
     constructor() {
-        // Inicializamos el mapa de agentes
+        // Inicializamos la conexión a la base de conocimiento vectorial
+        this.client = new ChromaClient();
+        this.collection = null;
+        
+        // Registro de Agentes Especializados
         this.agents = {
-            finance: new FinanceAgent(),
-            graviton: new GravitonAgent(),
-            handyman: new HandymanAgent()
-            // ... registrar los otros
+            finance: null, // Asignaremos instancias aquí
+            graviton: null,
+            handyman: null
         };
+        
+        this.init();
+    }
+
+    async init() {
+        // Conexión a la colección de datos 'titan-knowledge'
+        this.collection = await this.client.getOrCreateCollection({
+            name: "titan-knowledge"
+        });
     }
 
     /**
-     * El "Chispazo": Punto de decisión lógica
-     * @param {string} userQuery - Lo que tú le pides al sistema
+     * Procesamiento de alta precisión
+     * @param {string} userQuery - La consulta del usuario
      */
-    async boot(userQuery) {
-        console.log("Analizando intención del Proyecto Arizona Titan...");
-        
-        // 1. Clasificación de la intención (Aquí aplicarías lógica de IA)
+    async processQuery(userQuery) {
+        console.log(`[Titan Core] Analizando: ${userQuery}`);
+
+        // 1. Recuperación de Contexto (El "Chispazo" de memoria)
+        const results = await this.collection.query({
+            queryTexts: [userQuery],
+            nResults: 3 // Extraemos los 3 fragmentos más relevantes del historial
+        });
+
+        const context = results.documents[0].join("\n");
+
+        // 2. Ruteo inteligente
         const targetAgent = this.routeQuery(userQuery);
 
-        // 2. Ejecución delegada
-        if (this.agents[targetAgent]) {
-            return await this.agents[targetAgent].execute(userQuery);
-        } else {
-            return "El Proyecto Arizona Titan no reconoce esta solicitud.";
-        }
+        // 3. Ejecución con contexto inyectado
+        return await this.executeAgentTask(targetAgent, userQuery, context);
     }
 
     routeQuery(query) {
-        // Lógica de ruteo básica (se puede mejorar con un LLM pequeño)
-        if (query.includes('dinero') || query.includes('presupuesto')) return 'finance';
-        if (query.includes('física') || query.includes('juego')) return 'graviton';
-        if (query.includes('reparar') || query.includes('trabajo')) return 'handyman';
+        const q = query.toLowerCase();
+        if (q.includes('dinero') || q.includes('trading')) return 'finance';
+        if (q.includes('física') || q.includes('gravitón') || q.includes('juego')) return 'graviton';
+        if (q.includes('reparar') || q.includes('manual')) return 'handyman';
         return 'general';
+    }
+
+    async executeAgentTask(agentName, query, context) {
+        // Aquí llamarías a la ejecución específica de cada agente
+        // pasando el 'context' para que tengan acceso a toda tu historia.
+        return `Agente ${agentName} ejecutando con contexto: ${context.substring(0, 50)}...`;
     }
 }
