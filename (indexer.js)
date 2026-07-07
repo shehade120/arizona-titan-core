@@ -1,0 +1,28 @@
+// scripts/indexer.js
+import { ChromaClient } from 'chromadb'; // Base vectorial
+import { OpenAIEmbeddings } from '@langchain/openai'; // O tu modelo preferido
+import fs from 'fs';
+import path from 'path';
+
+const client = new ChromaClient();
+
+async function indexFiles() {
+    const filesDir = './knowledge-base'; // Aquí pondremos tus PDFs, TXTs, etc.
+    const files = fs.readdirSync(filesDir);
+
+    for (const file of files) {
+        const content = fs.readFileSync(path.join(filesDir, file), 'utf-8');
+        
+        // Convertimos el contenido en vectores
+        const vector = await generateEmbedding(content);
+        
+        // Guardamos en la base de datos de Titan
+        await collection.add({
+            ids: [file],
+            embeddings: [vector],
+            metadatas: [{ source: file }],
+            documents: [content]
+        });
+        console.log(`Knowledge Base actualizada: ${file}`);
+    }
+}
