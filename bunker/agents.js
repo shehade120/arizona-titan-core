@@ -1,18 +1,12 @@
 // /bunker/agents.js - Núcleo de Automatización
 const TitanAgents = {
     amazonBot: {
-        status: "STANDBY",
-        init: function() {
-            console.log("Conectando con Amazon Associates API...");
-            // Aquí insertaremos la lógica de tu StoreID
-        }
-    },
-    systemMonitor: {
         status: "ACTIVE",
-        ping: function() {
-            console.log("Bunker Alpha: Operativo.");
+        // Aquí conectaremos tu StoreID de Amazon Associates
+        init: function() {
+            const storeId = "TU_STORE_ID_AQUI"; 
+            console.log("Amazon Bot cargado con StoreID: " + storeId);
+            // Lógica para monitorear clics en tus enlaces afiliados
         }
     }
 };
-
-TitanAgents.systemMonitor.ping();
