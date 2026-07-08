@@ -3,61 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arizona Titan: Consultoría estratégica, identidad de marca e inteligencia artificial. Construyendo el futuro hoy.">
-    <title>Arizona Titan | Consultoría Estratégica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Arizona Titan | Excelencia Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --oro-titan: #D4AF37;
-            --negro-profundo: #050505;
-            --gris-oscuro: #121212;
-            --blanco-suave: #E0E0E0;
-        }
+        :root { --oro: #D4AF37; --negro: #050505; --gris: #1a1a1a; --blanco: #f4f4f4; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--negro-profundo); color: var(--blanco-suave); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+        body { background: var(--negro); color: var(--blanco); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
         
-        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 3px solid var(--oro-titan); padding: 20px; }
-        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--oro-titan); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 10px; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); background-size: cover; text-align: center; border-bottom: 2px solid var(--oro); }
+        h1 { font-family: 'Cinzel', serif; font-size: 5rem; color: var(--oro); letter-spacing: 10px; text-transform: uppercase; margin-bottom: 20px; }
+        .tagline { font-size: 1.5rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 200; }
+
+        .section { padding: 100px 20px; max-width: 1100px; margin: auto; }
+        h2 { font-family: 'Cinzel', serif; color: var(--oro); font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
         
-        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--gris-oscuro); padding: 40px; border: 1px solid rgba(212, 175, 55, 0.1); transition: 0.4s; }
-        .card:hover { border-color: var(--oro-titan); transform: translateY(-10px); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .card { background: var(--gris); border: 1px solid #333; overflow: hidden; transition: 0.4s; }
+        .card img { width: 100%; height: 250px; object-fit: cover; filter: grayscale(30%); transition: 0.4s; }
+        .card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+        .card-content { padding: 30px; }
         
-        .cta-button { display: inline-block; margin-top: 30px; padding: 15px 40px; border: 2px solid var(--oro-titan); color: var(--oro-titan); text-transform: uppercase; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .cta-button:hover { background: var(--oro-titan); color: var(--negro-profundo); }
-        
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; border-top: 1px solid #111; }
+        footer { text-align: center; padding: 50px; border-top: 1px solid #333; font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Arizona Titan</h1>
+        <p class="tagline">Arquitectura de Negocios • Inteligencia Artificial • Legado</p>
+    </header>
 
-<header>
-    <h1>Arizona Titan</h1>
-    <p>Estrategia • Identidad • Legado</p>
-    <a href="#servicios" class="cta-button">Ver Soluciones</a>
-</header>
-
-<div class="container">
-    <section class="services" id="servicios">
-        <div class="card">
-            <h3>Identidad & Marca</h3>
-            <p>Transformamos locales comerciales en referentes de la ciudad. Diseñamos para el éxito y el legado familiar.</p>
+    <div class="section">
+        <h2>Nuestro Ecosistema</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="ruta_a_tu_imagen_graviton.jpg" alt="Gravitón Video Game">
+                <div class="card-content">
+                    <h3>Gravitón</h3>
+                    <p>Proyecto independiente de nueva generación. Mecánicas físicas interdimensionales desarrolladas bajo el estándar Arizona Titan.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="ruta_a_tu_imagen_titan_wear.jpg" alt="Titan Wear Apparel">
+                <div class="card-content">
+                    <h3>Titan Wear</h3>
+                    <p>Apparel de alta calidad. Identidad visual que fusiona el diseño estratégico con la cultura urbana de Arizona.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="ruta_a_tu_imagen_consultoria.jpg" alt="Consultoría Estratégica">
+                <div class="card-content">
+                    <h3>Consultoría Nivel 3</h3>
+                    <p>Soluciones críticas para negocios, optimización de activos y toma de decisiones basada en inteligencia superior.</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h3>Tecnología Avanzada</h3>
-            <p>Implementación de Inteligencia Artificial General y sistemas automatizados para optimizar su negocio.</p>
-        </div>
-        <div class="card">
-            <h3>Consultoría Nivel 3</h3>
-            <p>Análisis crítico de negocios y activos basado en datos financieros y visión a largo plazo.</p>
-        </div>
-    </section>
-</div>
+    </div>
 
-<footer>
-    <p>ARIZONA TITAN © 2026 | Powered by AGI Manus</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2026 ARIZONA TITAN. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p>POWERED BY AGI MANUS</p>
+    </footer>
 </body>
 </html>
