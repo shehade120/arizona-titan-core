@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arizona Titan: Consultoría estratégica, identidad de marca e inteligencia artificial. Construyendo el futuro hoy.">
+    <title>Arizona Titan | Consultoría Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro-titan: #D4AF37;
+            --negro-profundo: #050505;
+            --gris-oscuro: #121212;
+            --blanco-suave: #E0E0E0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--negro-profundo); color: var(--blanco-suave); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+        
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 3px solid var(--oro-titan); padding: 20px; }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--oro-titan); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 10px; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gris-oscuro); padding: 40px; border: 1px solid rgba(212, 175, 55, 0.1); transition: 0.4s; }
+        .card:hover { border-color: var(--oro-titan); transform: translateY(-10px); }
+        
+        .cta-button { display: inline-block; margin-top: 30px; padding: 15px 40px; border: 2px solid var(--oro-titan); color: var(--oro-titan); text-transform: uppercase; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .cta-button:hover { background: var(--oro-titan); color: var(--negro-profundo); }
+        
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; border-top: 1px solid #111; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Arizona Titan</h1>
+    <p>Estrategia • Identidad • Legado</p>
+    <a href="#servicios" class="cta-button">Ver Soluciones</a>
+</header>
+
+<div class="container">
+    <section class="services" id="servicios">
+        <div class="card">
+            <h3>Identidad & Marca</h3>
+            <p>Transformamos locales comerciales en referentes de la ciudad. Diseñamos para el éxito y el legado familiar.</p>
+        </div>
+        <div class="card">
+            <h3>Tecnología Avanzada</h3>
+            <p>Implementación de Inteligencia Artificial General y sistemas automatizados para optimizar su negocio.</p>
+        </div>
+        <div class="card">
+            <h3>Consultoría Nivel 3</h3>
+            <p>Análisis crítico de negocios y activos basado en datos financieros y visión a largo plazo.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>ARIZONA TITAN © 2026 | Powered by AGI Manus</p>
+</footer>
+
+</body>
+</html>
