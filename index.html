@@ -2,37 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arizona Titan | Core Engine</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="0; url=/public/index.html">
+    <title>Redirigiendo a Arizona Titan...</title>
 </head>
 <body>
-    <div id="app">
-        <header>
-            <h1>Arizona Titan Core</h1>
-            <p>Sistema de Orquestación de Agentes</p>
-        </header>
-
-        <main>
-            <div id="status-panel">
-                <button id="start-engine">Inicializar Motor</button>
-            </div>
-            <div id="console-output"></div>
-        </main>
-    </div>
-
-    <script type="module">
-        import { Orchestrator } from './agent/orchestrator.js';
-
-        const btn = document.getElementById('start-engine');
-        const output = document.getElementById('console-output');
-
-        btn.addEventListener('click', async () => {
-            output.innerHTML = "Iniciando secuencia de activación...";
-            const titan = new Orchestrator();
-            await titan.boot();
-            output.innerHTML = "Sistema Arizona Titan en línea.";
-        });
-    </script>
+    <p>Si no es redirigido automáticamente, haga clic <a href="/public/index.html">aquí</a>.</p>
 </body>
 </html>
