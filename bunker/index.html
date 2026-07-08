@@ -1,2 +1,24 @@
-<script src="auth.js"></script>
-<script src="agents.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BUNKER ALPHA | SISTEMA OPERATIVO</title>
+    <!-- Incluimos nuestra seguridad y la lógica de agentes -->
+    <script src="auth.js"></script>
+    <script src="agents.js"></script>
+    <style>
+        body { background: #000; color: #00ff00; font-family: 'Courier New', monospace; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>SISTEMA OPERATIVO: BÚNKER ALPHA</h1>
+    <div id="status-panel">Analizando agentes...</div>
+    <script>
+        // Verificamos acceso y activamos agentes
+        if (checkAccess()) {
+            document.getElementById('status-panel').innerHTML = "Acceso Autorizado. Bots en línea.";
+            TitanAgents.amazonBot.init();
+        }
+    </script>
+</body>
+</html>
