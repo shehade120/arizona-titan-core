@@ -3,32 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan Wear | Arizona Titan</title>
+    <title>Titan Wear | Arizona Titan Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: #fff; font-family: 'Montserrat', sans-serif; }
-        .hero { padding: 100px 20px; text-align: center; border-bottom: 1px solid #333; }
-        h1 { color: #D4AF37; font-family: 'Cinzel', serif; font-size: 3rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px; }
-        .item { background: #1a1a1a; padding: 20px; border: 1px solid #333; }
-        img { width: 100%; height: auto; }
+        :root { --oro: #D4AF37; --negro: #050505; --gris: #111; --blanco: #fff; }
+        body { background: var(--negro); color: var(--blanco); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+        
+        .header { padding: 40px 20px; text-align: center; border-bottom: 2px solid var(--oro); background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/asset_5.jpg'); background-size: cover; background-position: center; }
+        h1 { font-family: 'Cinzel', serif; color: var(--oro); font-size: clamp(2.5rem, 8vw, 4rem); letter-spacing: 5px; margin: 0; }
+        .subtitle { letter-spacing: 3px; text-transform: uppercase; font-weight: 300; color: #888; margin-top: 10px; }
+
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        .card { background: var(--gris); border: 1px solid #222; border-radius: 4px; overflow: hidden; transition: 0.3s; position: relative; }
+        .card:hover { transform: translateY(-10px); border-color: var(--oro); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1); }
+        .card img { width: 100%; height: 350px; object-fit: cover; }
+        
+        .card-body { padding: 30px; text-align: center; }
+        h3 { font-family: 'Cinzel', serif; color: var(--oro); margin: 0 0 10px; font-size: 1.4rem; }
+        .price { font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; color: var(--blanco); }
+        .price span { font-size: 1rem; color: #666; font-weight: 300; }
+
+        .buy-btn { 
+            display: inline-block; width: 100%; padding: 15px; background: var(--oro); color: #000; 
+            text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+            border-radius: 2px; transition: 0.3s; border: 2px solid var(--oro);
+        }
+        .buy-btn:hover { background: transparent; color: var(--oro); }
+
+        .back-link { display: block; text-align: center; margin-top: 40px; color: var(--oro); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .badge { position: absolute; top: 20px; left: 20px; background: var(--oro); color: #000; padding: 5px 15px; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; border-radius: 2px; }
     </style>
 </head>
 <body>
-    <div class="hero">
+    <div class="header">
         <h1>TITAN WEAR</h1>
-        <p>Identidad estratégica urbana.</p>
+        <p class="subtitle">Equipamiento Táctico para la Élite de Negocios</p>
     </div>
-    <div class="grid">
-        <div class="item">
-            <img src="../images/asset_2.jpg" alt="Titan Wear">
-            <h3>Titan Signature Hoodie</h3>
-            <p>$89.00</p>
+
+    <div class="container">
+        <div class="grid">
+            <!-- PRODUCTO 1 -->
+            <div class="card">
+                <div class="badge">Limited Edition</div>
+                <img src="../images/asset_2.jpg" alt="Titan Signature Hoodie">
+                <div class="card-body">
+                    <h3>Titan Signature Hoodie</h3>
+                    <p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">Algodón premium de 400g con bordado de Geometría Sagrada.</p>
+                    <div class="price">$89.00 <span>USD</span></div>
+                    <!-- ✅ PASO 1: Crea enlace de pago en https://dashboard.stripe.com/products
+                         Copia el enlace del producto y reemplaza abajo -->
+                    <a href="https://buy.stripe.com/test_placeholder_1" class="buy-btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="card">
+                <img src="../images/asset_4.jpg" alt="Titan Tactical Tee">
+                <div class="card-body">
+                    <h3>Titan Tactical Tee</h3>
+                    <p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">Tejido técnico transpirable optimizado para alto rendimiento.</p>
+                    <div class="price">$45.00 <span>USD</span></div>
+                    <!-- ✅ PASO 1: Crea enlace de pago en https://dashboard.stripe.com/products -->
+                    <a href="https://buy.stripe.com/test_placeholder_2" class="buy-btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3 (EXTRA) -->
+            <div class="card">
+                <div class="badge">Pre-Order</div>
+                <img src="../images/asset_1.jpg" alt="Graviton Collector's Edition">
+                <div class="card-body">
+                    <h3>Gravitón: Founder Pack</h3>
+                    <p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">Acceso anticipado + Skin exclusiva de Arizona Titan.</p>
+                    <div class="price">$120.00 <span>USD</span></div>
+                    <!-- ✅ PASO 1: Crea enlace de pago en https://dashboard.stripe.com/products -->
+                    <a href="https://buy.stripe.com/test_placeholder_3" class="buy-btn">Asegurar Cupo</a>
+                </div>
+            </div>
         </div>
-        <div class="item">
-            <img src="../images/asset_4.jpg" alt="Titan Gear">
-            <h3>Titan Tactical Tee</h3>
-            <p>$45.00</p>
-        </div>
+
+        <a href="../" class="back-link">← Volver al Centro de Mando</a>
     </div>
+
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #222;">
+        &copy; 2026 ARIZONA TITAN | PAGOS SEGUROS VÍA STRIPE
+    </footer>
 </body>
 </html>
