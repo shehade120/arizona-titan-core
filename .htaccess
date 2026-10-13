@@ -1,0 +1,20 @@
+# ----------------------------------------------------------------------
+# ARIZONA TITAN CORE - SERVER CONFIG
+# ----------------------------------------------------------------------
+
+# Indica al servidor qué archivo mostrar en caso de error
+ErrorDocument 404 /404.html
+
+# Seguridad: Impide que cualquier persona vea el listado de tus archivos
+Options -Indexes
+
+# Asegura que el texto se vea bien en cualquier navegador
+AddDefaultCharset UTF-8
+
+# Activa el motor de reescritura para futuras reglas de Arizona Titan
+RewriteEngine On
+hereq
+# CONFIGURACION NUCLEO ARIZONA TITAN
+# Esta linea busca el archivo que crearemos a continuacion
+ErrorDocument 404 /error404.html
+

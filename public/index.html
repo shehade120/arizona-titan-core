@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arizona Titan - Arquitectura de Negocios, Inteligencia Artificial y Legado Empresarial">
+    <meta name="theme-color" content="#050505">
+    <title>Arizona Titan | Excelencia Estratégica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro: #D4AF37;
+            --negro: #050505;
+            --gris: #1a1a1a;
+            --blanco: #f4f4f4;
+            --transicion: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: var(--negro);
+            color: var(--blanco);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* HEADER CON HERO IMAGE */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/asset_5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            border-bottom: 3px solid var(--oro);
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(5,5,5,0.4) 100%);
+            pointer-events: none;
+        }
+        
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--oro);
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 200;
+            color: var(--blanco);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* SECCIONES */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--oro);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+        
+        /* GRID RESPONSIVE */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .card {
+            background: var(--gris);
+            border: 1px solid #333;
+            overflow: hidden;
+            transition: var(--transicion);
+            border-radius: 4px;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--oro);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            filter: grayscale(20%) brightness(0.9);
+            transition: var(--transicion);
+        }
+        
+        .card:hover img {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.03);
+        }
+        
+        .card-content {
+            padding: 35px;
+        }
+        
+        .card-content h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--oro);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .card-content p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--gris) 0%, var(--negro) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: transparent;
+            border: 2px solid var(--oro);
+            color: var(--oro);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transicion);
+            margin-top: 30px;
+        }
+        
+        .cta-button:hover {
+            background: var(--oro);
+            color: var(--negro);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 15px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            header {
+                background-attachment: scroll;
+            }
+        }
+        
+        /* LAZY LOAD PLACEHOLDER */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arizona Titan</h1>
+        <p class="tagline">Arquitectura de Negocios • Inteligencia Artificial • Legado</p>
+    </header>
+
+    <div class="section">
+        <h2>Nuestro Ecosistema</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="images/asset_1.jpg" 
+                     alt="Gravitón - Videojuego de mecánicas físicas interdimensionales" 
+                     loading="lazy"
+                     width="400" 
+                     height="280">
+                <div class="card-content">
+                    <h3>Gravitón</h3>
+                    <p>Proyecto independiente de nueva generación. Mecánicas físicas interdimensionales desarrolladas bajo el estándar Arizona Titan.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/asset_2.jpg" 
+                     alt="Titan Wear - Apparel premium con identidad visual estratégica" 
+                     loading="lazy"
+                     width="400" 
+                     height="280">
+                <div class="card-content">
+                    <h3>Titan Wear</h3>
+                    <p>Apparel de alta calidad. Identidad visual que fusiona el diseño estratégico con la cultura urbana de Arizona.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/asset_3.jpg" 
+                     alt="Consultoría Estratégica Nivel 3 - Optimización de activos empresariales" 
+                     loading="lazy"
+                     width="400" 
+                     height="280">
+                <div class="card-content">
+                    <h3>Consultoría Nivel 3</h3>
+                    <p>Soluciones críticas para negocios, optimización de activos y toma de decisiones basada en inteligencia superior.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2 style="margin-bottom: 30px;">¿Listo para el Siguiente Nivel?</h2>
+        <p style="color: #888; max-width: 600px; margin: 0 auto;">Conecta con nuestro equipo de estrategia y descubre cómo Arizona Titan puede transformar tu visión en realidad.</p>
+        <a href="mailto:operations@arizonatitan.com" class="cta-button">Iniciar Proyecto</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ARIZONA TITAN. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p>POWERED BY FREE LLM ENGINE | LM STUDIO LOCAL</p>
+    </footer>
+</body>
+</html>
