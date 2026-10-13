@@ -17,9 +17,9 @@
             --blanco: #f4f4f4;
             --transicion: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             background: var(--negro);
             color: var(--blanco);
@@ -27,7 +27,7 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         /* HEADER CON HERO IMAGE */
         header {
             height: 100vh;
@@ -43,7 +43,7 @@
             border-bottom: 3px solid var(--oro);
             position: relative;
         }
-        
+
         header::before {
             content: '';
             position: absolute;
@@ -54,7 +54,7 @@
             background: radial-gradient(ellipse at center, transparent 0%, rgba(5,5,5,0.4) 100%);
             pointer-events: none;
         }
-        
+
         h1 {
             font-family: 'Cinzel', serif;
             font-size: clamp(2.5rem, 8vw, 5rem);
@@ -66,7 +66,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .tagline {
             font-size: clamp(1rem, 3vw, 1.5rem);
             letter-spacing: 5px;
@@ -76,14 +76,14 @@
             position: relative;
             z-index: 1;
         }
-        
+
         /* SECCIONES */
         .section {
             padding: 100px 20px;
             max-width: 1200px;
             margin: auto;
         }
-        
+
         h2 {
             font-family: 'Cinzel', serif;
             color: var(--oro);
@@ -92,14 +92,14 @@
             text-align: center;
             letter-spacing: 3px;
         }
-        
+
         /* GRID RESPONSIVE */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
-        
+
         .card {
             background: var(--gris);
             border: 1px solid #333;
@@ -107,13 +107,13 @@
             transition: var(--transicion);
             border-radius: 4px;
         }
-        
+
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--oro);
             box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
         }
-        
+
         .card img {
             width: 100%;
             height: 280px;
@@ -121,16 +121,16 @@
             filter: grayscale(20%) brightness(0.9);
             transition: var(--transicion);
         }
-        
+
         .card:hover img {
             filter: grayscale(0%) brightness(1);
             transform: scale(1.03);
         }
-        
+
         .card-content {
             padding: 35px;
         }
-        
+
         .card-content h3 {
             font-family: 'Cinzel', serif;
             color: var(--oro);
@@ -138,13 +138,13 @@
             margin-bottom: 15px;
             letter-spacing: 2px;
         }
-        
+
         .card-content p {
             color: #aaa;
             font-size: 0.95rem;
             line-height: 1.8;
         }
-        
+
         /* CTA SECTION */
         .cta-section {
             background: linear-gradient(135deg, var(--gris) 0%, var(--negro) 100%);
@@ -153,7 +153,7 @@
             border-top: 1px solid #333;
             border-bottom: 1px solid #333;
         }
-        
+
         .cta-button {
             display: inline-block;
             padding: 18px 50px;
@@ -168,13 +168,13 @@
             transition: var(--transicion);
             margin-top: 30px;
         }
-        
+
         .cta-button:hover {
             background: var(--oro);
             color: var(--negro);
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
         }
-        
+
         /* FOOTER */
         footer {
             text-align: center;
@@ -183,33 +183,32 @@
             font-size: 0.85rem;
             color: #666;
         }
-        
+
         footer p {
             margin: 10px 0;
         }
-        
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .section {
                 padding: 60px 15px;
             }
-            
+
             .grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             header {
                 background-attachment: scroll;
             }
         }
-        
-        /* LAZY LOAD PLACEHOLDER */
+
         img[loading="lazy"] {
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
+
         img[loading="lazy"].loaded {
             opacity: 1;
         }
@@ -225,10 +224,10 @@
         <h2>Nuestro Ecosistema</h2>
         <div class="grid">
             <div class="card">
-                <img src="images/asset_1.jpg" 
-                     alt="Gravitón - Videojuego de mecánicas físicas interdimensionales" 
+                <img src="images/asset_1.jpg"
+                     alt="Gravitón - Videojuego de mecánicas físicas interdimensionales"
                      loading="lazy"
-                     width="400" 
+                     width="400"
                      height="280">
                 <div class="card-content">
                     <h3>Gravitón</h3>
@@ -236,10 +235,10 @@
                 </div>
             </div>
             <div class="card">
-                <img src="images/asset_2.jpg" 
-                     alt="Titan Wear - Apparel premium con identidad visual estratégica" 
+                <img src="images/asset_2.jpg"
+                     alt="Titan Wear - Apparel premium con identidad visual estratégica"
                      loading="lazy"
-                     width="400" 
+                     width="400"
                      height="280">
                 <div class="card-content">
                     <h3>Titan Wear</h3>
@@ -247,10 +246,10 @@
                 </div>
             </div>
             <div class="card">
-                <img src="images/asset_3.jpg" 
-                     alt="Consultoría Estratégica Nivel 3 - Optimización de activos empresariales" 
+                <img src="images/asset_3.jpg"
+                     alt="Consultoría Estratégica Nivel 3 - Optimización de activos empresariales"
                      loading="lazy"
-                     width="400" 
+                     width="400"
                      height="280">
                 <div class="card-content">
                     <h3>Consultoría Nivel 3</h3>
@@ -281,22 +280,10 @@
     <div class="section" id="gear">
         <h2>Elite Gear (Recomendado)</h2>
         <div class="grid">
-            <div class="card" style="padding: 20px;">
-                <h3>Soporte Técnico Especializado</h3>
-                <p style="color: #888; font-size: 0.9rem;">Hardware optimizado para arquitectura de negocios e IA.</p>
-                <!-- Ejemplo de enlace Amazon -->
-                <a href="https://amzn.to/example_affiliate_link" style="color: var(--oro); text-decoration: none; display: block; margin-top: 15px; font-weight: bold;">Ver en Amazon →</a></div>
-        </div>
-    </div>
-
-    <!-- AMAZON AFFILIATE PRODUCTS -->
-    <div class="section" id="gear">
-        <h2>Elite Gear (Recomendado)</h2>
-        <div class="grid">
             <div class="card">
                 <div class="card-body">
                     <h3>🖥️ Laptop Gaming RTX 4060</h3>
-                    <p style="color: #888; font-size: 0.9rem;">Potencia para simulations 3D y rendering en tiempo real.</p>
+                    <p style="color: #888; font-size: 0.9rem;">Potencia para simulaciones 3D y rendering en tiempo real.</p>
                     <a href="https://www.amazon.com/s?k=gaming+laptop+rtx+4060&tag=radardeof0798-20" target="_blank" style="color: var(--oro); text-decoration: none; display: block; margin-top: 15px; font-weight: bold;">Ver en Amazon →</a>
                 </div>
             </div>
@@ -316,11 +303,10 @@
             </div>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2026 ARIZONA TITAN. TODOS LOS DERECHOS RESERVADOS.</p>
         <p>POWERED BY FREE LLM ENGINE | LM STUDIO LOCAL</p>
     </footer>
 </body>
 </html>
-
-
